@@ -1,5 +1,8 @@
 <h1>Listing posts</h1>
- 
+
+ <%= link_to 'New post', new_post_path %>
+ <br>
+ <br>
 <table>
   <tr>
     <th>Title</th>
@@ -10,6 +13,11 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.text %></td>
+      <td><%= link_to 'show', posts_path %></td>
+      <td><%= link_to 'edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post_path(post), 
+                              method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
+
 </table>
